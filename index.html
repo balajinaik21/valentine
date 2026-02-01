@@ -119,10 +119,14 @@
 
     // YES button click
     yesBtn.addEventListener("click", () => {
-      buttons.style.display = "none";
-      question.style.display = "none";
-      result.style.display = "block";
-    });
+  buttons.style.display = "none";
+  question.style.display = "none";
+  result.style.display = "block";
+
+  const music = document.getElementById("bgMusic");
+  music.play();
+});
+
   </script>
 
 </body>
