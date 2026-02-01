@@ -109,17 +109,18 @@
     const question = document.getElementById("question");
     const card = document.querySelector(".card");
 
-    // Make NO button run away
-    noBtn.addEventListener("mouseenter", () => {
-      const maxX = card.clientWidth - noBtn.offsetWidth - 20;
-      const maxY = card.clientHeight - noBtn.offsetHeight - 20;
+    // Make NO button run away (inside card only)
+noBtn.addEventListener("mouseenter", () => {
+  const maxX = card.clientWidth - noBtn.offsetWidth - 20;
+  const maxY = card.clientHeight - noBtn.offsetHeight - 20;
 
-      const randomX = Math.random() * maxX;
-      const randomY = Math.random() * maxY;
+  const randomX = Math.random() * maxX;
+  const randomY = Math.random() * maxY;
 
-      noBtn.style.left = randomX + "px";
-      noBtn.style.top = randomY + "px";
-    });
+  noBtn.style.left = randomX + "px";
+  noBtn.style.top = randomY + "px";
+});
+
 
     // YES button click
     yesBtn.addEventListener("click", () => {
