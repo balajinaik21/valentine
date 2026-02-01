@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine 💖</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #f6c1d1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 22px;
+      width: 450px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 60px;
+    }
+
+    button {
+      padding: 12px 32px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background: #ff4d79;
+      color: white;
+      margin-right: 20px;
+    }
+
+    #noBtn {
+      background: #e0e0e0;
+      color: #333;
+      position: absolute;
+    }
+
+    /* Result section */
+    .result {
+      display: none;
+    }
+
+    .result img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 16px;
+      margin-top: 10px;
+    }
+
+    .result p {
+      margin-top: 20px;
+      font-size: 22px;
+      color: #ff4d79;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h2 id="question">Chamee Bubu, will you be my Valentine?</h2>
+
+    <div class="buttons" id="buttons">
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+
+    <div class="result" id="result">
+      <img src="bubu.jpg" alt="Bubu Dudu">
+      <p>yeaaa chamee bubu is valantie</p>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const result = document.getElementById("result");
+    const buttons = document.getElementById("buttons");
+    const question = document.getElementById("question");
+    const card = document.querySelector(".card");
+
+    // Make NO button run away
+    noBtn.addEventListener("mouseenter", () => {
+      const maxX = card.clientWidth - noBtn.offsetWidth - 20;
+      const maxY = card.clientHeight - noBtn.offsetHeight - 20;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      noBtn.style.left = randomX + "px";
+      noBtn.style.top = randomY + "px";
+    });
+
+    // YES button click
+    yesBtn.addEventListener("click", () => {
+      buttons.style.display = "none";
+      question.style.display = "none";
+      result.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
+
